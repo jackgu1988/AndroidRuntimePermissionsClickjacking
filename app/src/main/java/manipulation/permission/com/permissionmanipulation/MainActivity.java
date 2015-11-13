@@ -14,6 +14,7 @@ import java.util.Random;
 
 public class MainActivity extends AppCompatActivity {
 
+    boolean popup = false;
     private TextView hitsNo;
     private int cnt = 0;
     private long prevClick = -1;
@@ -31,13 +32,15 @@ public class MainActivity extends AppCompatActivity {
         setHits(cnt);
     }
 
-    private void requestLocationPermission() {
+    private boolean requestLocationPermission() {
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
                 != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
                     1);
+            return true;
         }
+        return false;
     }
 
     private int rndNo(int min, int max) {
@@ -49,15 +52,16 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void btnHit(View v) {
-        if (prevClick + 200 < System.currentTimeMillis() && prevClick != -1)
+        if (popup ? prevClick + 400 < System.currentTimeMillis() : prevClick + 200 < System.currentTimeMillis()
+                && prevClick != -1)
             cnt = 0;
 
         setHits(cnt++);
 
-        prevClick = System.currentTimeMillis();
-
         if (cnt == displayCnt)
-            requestLocationPermission();
+            popup = requestLocationPermission();
+
+        prevClick = System.currentTimeMillis();
     }
 
     @Override
