@@ -1,4 +1,4 @@
-# AndroidMPermissionManipulation
+# Runtime Permissions Clickjacking
 A simple demonstration of how an app can trick a user into granting permissions unwillingly on Android Marshmallow, attacking Runtime Permissions (works on Nexus 5 - portrait mode, but can be extended and made dynamic).
 
 ## Instructions
