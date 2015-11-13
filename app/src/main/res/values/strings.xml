@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">PermissionManipulation</string>
+    <string name="hit_txt">HIT ME FAST</string>
+    <string name="hits_no">Number of hits: %s</string>
+    <string name="lost">You lost! Tap faster!</string>
+    <string name="permission_granted">You have given me permission to access your GPS :D</string>
+</resources>
