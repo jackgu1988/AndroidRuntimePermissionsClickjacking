@@ -4,4 +4,5 @@
     <string name="hits_no">Number of hits: %s</string>
     <string name="lost">You lost! Tap faster!</string>
     <string name="permission_granted">You have given me permission to access your GPS :D</string>
+    <string name="instructions_txt">Tap the button as fast as possible!</string>
 </resources>
